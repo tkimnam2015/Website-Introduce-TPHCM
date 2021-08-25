@@ -343,7 +343,7 @@ header {
     font-weight: bold;
     font-size: 20px;
     transition: all 0.5s ease;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .dish button:hover {
     background-color: var(--main-color);
