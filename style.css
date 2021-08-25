@@ -1,0 +1,453 @@
+/* -------import font Google------- */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
+/* ------------define-------------- */
+:root {
+    --main-text-font: 'Lobster', cursive;
+    --logo-text-font: 'Anton', sans-serif;
+    --main-color: #ED1B24;
+}
+html {
+    scroll-behavior: smooth;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+header {
+    background-image: url("Images/saigon.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+.bg-image {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+.top {
+    position: fixed;
+    padding: 10px 80px;
+    width: 100%;
+    z-index: 1;
+    background-image: url("Images/nen-background-mau-trang-don-gian-1920x1281.jpg");
+}
+.header-top{
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+}
+.header-top p {
+    font-family: var(--logo-text-font);
+    font-size: 25px;
+    letter-spacing: 2px;
+    color: var(--main-color);
+}
+.header-top p span {
+    font-size: 20px;
+}
+.header-top ul {
+    display: flex;
+}
+.header-top ul li {
+    margin-left: 30px;
+    position: relative;
+}
+.header-top ul li::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: -2px;
+    height: 4px;
+    width: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--main-color);
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+.header-top ul li:hover::after {
+    width: 100%;
+}
+.header-top ul li a {
+    font-family: var(--logo-text-font);
+    color: rgb(80, 78, 78);
+}
+.header-top ul i {
+    font-size: 32px;
+    color: white;
+    margin: 12px 0 0 12px;
+    cursor: pointer;
+    margin-bottom: 70px;
+    display: none;
+}
+.header-top> i {
+    font-size: 32px;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    max-width: 700px;
+    min-width: 300px;
+    text-align: center;
+}
+.header-text h1 {
+    font-family: var(--main-text-font);
+    color: white;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 34px;
+}
+.header-text p {
+    font-family: var(--main-text-font);
+    color: white;
+}
+.header-text button {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.5s ease;
+}
+.header-text button:hover {
+    background-color: var(--main-color);
+}
+.background {
+    background-image: url("Images/nen-background-mau-trang-don-gian-1920x1281.jpg");
+}
+/* ---------Responsive HTML_Home------------ */
+@media (max-width: 575px) {
+    .header-top ul {
+        position: fixed;
+        width: 200px;
+        height: 100vh;
+        background-color: #ff000d;
+        right: 0;
+        top: 0;
+        flex-direction: column;
+        transform: translate(100%);
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+    .header-top ul li {
+        margin-bottom: 20px;
+        margin-left: 50px;
+    }
+    .header-top> i {
+        display: block;
+    }
+    .header-top ul> i {
+        display: block;
+    }
+    .header-top {
+        padding: 0 12px;
+    }
+    .history-item, .place-item, .dish-item, .evaluation-item {
+        width: 100%!important;
+        margin-bottom: 20px;
+    }
+}
+
+/* ---------------History------------------- */
+.history {
+    padding: 50px 0;
+}
+.history h1 {
+    font-family: var(--main-text-font);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.history-items {
+    justify-content: space-between;
+}
+.history-item {
+    width: 30%;
+    text-align: center;
+    background-color: #c0c2e4;
+    padding: 20px 30px;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+.history-item:hover {
+    box-shadow: 10px 10px 5px 5px #7a7979;
+}
+.history-item h2 {
+    font-family: var(--main-text-font);
+    font-size: 30px;
+    margin-bottom: 12px;
+    color: #333333;
+}
+.history-item p {
+    font-family: var(--main-text-font);
+    font-size: 17px;
+    color: #333333;
+}
+/* -------------Place------------------ */
+.place {
+    padding: 50px 0;
+    text-align: center;
+}
+.place h1 {
+    font-family: var(--main-text-font);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.place-items {
+    justify-content: space-between;
+}
+.place-item {
+    width: 30%;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+.place-item::before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #c0c2e4;
+    position: absolute;
+    opacity: 0;
+}
+.place-item:hover::before {
+    opacity: 0.5;
+}
+.place-item:hover h2 {
+    opacity: 1;
+}
+.place-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.place-item h2 {
+    font-family: var(--logo-text-font);
+    color: #333333;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.place button {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: #333333;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+}
+.place button:hover {
+    background-color: var(--main-color);
+}
+/* ---------------Dish---------------- */
+.dish {
+    padding: 50px 0;
+    text-align: center;
+}
+.dish h1 {
+    font-family: var(--main-text-font);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.dish-items {
+    justify-content: space-between;
+}
+.dish-item {
+    width: 30%;
+    border-radius: 5px;
+}
+.dish-item h2 {
+    font-family: var(--logo-text-font);
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    margin: 15px 0 6px 0;
+}
+.dish-item:hover h2 {
+    font-family: var(--logo-text-font);
+    font-size: 50px;
+    color: #333333;
+    margin: 15px 0 6px 0;
+}
+.dish-item:hover img {
+    transform: scale(1.04);
+}
+.dish-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+.dish-item:hover p {
+    font-weight: bold;
+}
+.dish-item p {
+    color: #363db3;
+    font-weight: bold;
+    transition: all 0.5s ease;
+}
+.dish button {
+    width: 150px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    color: #333333;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.5s ease;
+    margin-top: 30px;
+}
+.dish button:hover {
+    background-color: var(--main-color);
+}
+/* -----------------Evaluation--------------- */
+.evaluation {
+    padding: 50px 0;
+}
+.evaluation> h1 {
+    font-family: var(--main-text-font);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333333;
+}
+.evaluation-items {
+    justify-content: space-between;
+}
+.evaluation-item {
+    width: 30%;
+    background-color: #c0c2e4;
+    padding: 20px 10px;
+}
+.evaluation-item h1 {
+    font-family: var(--main-text-font);
+    font-size: 18px;
+    color: #333333;
+    margin: 12px 0 6px;
+}
+.evaluation-item i {
+    color: rgb(105, 105, 6);
+}
+.evaluation-item:hover img {
+    border: 5px solid #c0c2e4;
+}
+.evaluation-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+}
+.evaluation-text {
+    width: 70%;
+    padding-left: 20px;
+}
+.evaluation-text:hover p {
+    font-weight: bold;
+}
+.evaluation-text p {
+    font-family: var(--main-text-font);
+    color: #333333;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.5s ease;
+}
+/* -----------------Contact--------------- */
+.contact {
+    background-image: url("Images/background_contact.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+    text-align: center;
+}
+.contact p {
+    color: white;
+    font-size: 30px;
+    font-family: var(--main-text-font);
+}
+.contact button {
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: var(--main-color);
+    border: none;
+    font-family: var(--logo-text-font);
+    color: white;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    font-size: 20px;
+}
+.contact button:hover {
+    background: transparent;
+    border: 2px solid var(--main-color);
+}
+/* -----------------Footer--------------- */
+footer {
+    padding: 50px 0 6px;
+    text-align: center;
+}
+footer h1 {
+    font-family: var(--main-text-font);
+    color: #333333;
+    margin-bottom: 22px;
+}
+footer p {
+    font-family: var(--main-text-font);
+    color: #333333;
+}
+footer i {
+    margin-top: 12px;
+    color: var(--main-color);
+    font-size: 30px;
+    cursor: pointer;
+}
